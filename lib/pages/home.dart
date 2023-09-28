@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../entities/banner_data.dart';
+import '../rought_genrator.dart';
 import '../util/json_save.dart';
 import '../widget/banner.dart';
 import '../widget/rounded_icon.dart';
@@ -191,7 +192,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       return ListView(children: [
                         ...listdata?.map((e) => GestureDetector(
                           onTap: ()=>{
-
+                          navigate.push(context, name: Routename.productList,qparms: {
+                          "id":e.id
+                          })
                           },
                           child: Card(
                             child: Padding(
